@@ -1,0 +1,125 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+import tkinter as tk
+import hashlib
+
+
+class App(tk.Frame):
+    def __init__(self,master):
+        tk.Frame.__init__(self,master) 
+        self.grid()
+        self.master.title("SPIEL")
+        self.master.configure(background="black",)
+        self.master.wm_geometry('1680x1050+300+400')
+
+class Buttons(tk.Frame): # Forlage für die Buttons
+    def __init__(self,master,reihe,spalte,but_text,hoeche,breite):
+        tk.Frame.__init__(self,master) 
+        self.grid()
+        self.spalte = spalte
+        self.reihe = reihe
+        self.but_text = but_text
+        self.hoeche = hoeche
+        self.breite = breite
+        tk.Button(master, text=but_text,height=hoeche,width=breite).grid(row=reihe,column=spalte)
+        
+class Labels(tk.Frame): # Forlage für die Labels
+    def __init__(self,master,reihe,spalte,lab_text,hoeche,breite):
+        tk.Frame.__init__(self,master) 
+        self.grid()
+        self.spalte = spalte
+        self.reihe = reihe
+        self.lab_text = lab_text
+        self.hoeche = hoeche
+        self.breite = breite
+        tk.Label(master, text=lab_text,height=hoeche,width=breite).grid(row=reihe,column=spalte)
+
+class Frames(tk.Frame): # Forlage für die Frames
+    def __init__(self,master,reihe,spalte,hoeche,breite,color_bg):
+        tk.Frame.__init__(self) 
+        self.grid()
+        self.color_bg = color_bg
+        self.spalte = spalte
+        self.reihe = reihe
+        self.hoeche = hoeche
+        self.breite = breite
+        tk.Frame(master,height=hoeche,width=breite,bg=color_bg).grid(row=reihe,column=spalte)
+
+class Loginabfrage(tk.Frame):
+    def __init__(self1):
+        
+    
+        def a1():
+            print("1")           
+
+        def a2():
+            print("2")
+            getippt.append(2)
+        def a3():
+            print("3")
+            getippt.append(3)     
+        def a4():
+            print("4")
+            getippt.append(4)
+        def a5():
+            print("5")      
+            getippt.append(5)     
+        def a6():
+            print("6")
+            getippt.append(6)
+        def a7():
+            print("7")      
+            getippt.append(7)     
+        def a8():
+            print("8")
+            getippt.append(8)
+        def a9():
+            print("9") 
+            getippt.append(9)          
+        def a10():
+            print("del")
+            del getippt[-1]
+        def a11():
+            print("0")      
+            getippt.append(0)     
+        def a12():
+            print("enter")
+            if getippt == passwort:
+                tk.Frame.quit(self1)
+        
+        tk.Frame.__init__(self1)
+        self1.grid()
+        
+        global passwort,geheim,getippt
+        
+        passwort= ""
+        geheim= ""
+        getippt = ""
+        
+        self1.tasten=[1,2,3,4,5,6,7,8,9,"del",0,"ok"]
+        self1.aufgabe = [a1,a2,a3,a4,a5,a6,a7,a8,a8,a10,a11,a12]
+        
+        for i in range(4):
+            for j in range(3):
+                b=tk.Button(self1,text=self1.tasten[3*i+j],width=6,height=3,command=self1.aufgabe[3*i+j])
+                b.grid(row=i,column=j,padx=4,pady=4)
+       
+       
+
+        self1.mainloop()
+
+
+
+
+if __name__ == '__main__':
+    log=Loginabfrage()
+    
+    root = tk.Tk()
+    app = App(root)
+
+
+    lab1 = tk.Label(root,text="HALLO",bg="black",fg="white" ).grid()
+    
+    root.mainloop() #SCHLEIFE!
+
+
